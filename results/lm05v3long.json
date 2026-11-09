@@ -1,0 +1,208 @@
+{
+ "model": "hyb_lstm_nope",
+ "repo": "(new) hybrid: LSTM layer + x-transformers decoder",
+ "target_repo": "LM_Dec_Long_HybridLSTM_NoPE",
+ "category": "Long",
+ "upstream": "lucidrains/x-transformers (MIT), pip 2.31.7 + torch.nn",
+ "unified": [
+  "ablation of hyb_gru_nope: LSTM instead of GRU in front of the NoPE decoder"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "lm05v3long",
+ "started": "2026-11-07 18:48:45",
+ "smoke": false,
+ "levels": {
+  "4": {
+   "queries": 1,
+   "distinct": true,
+   "steps": 30000,
+   "capped": false,
+   "diverged": false,
+   "bf16": true,
+   "final_loss": 2.719456233535311e-07,
+   "minutes": 62.0,
+   "history": [
+    {
+     "step": 2500,
+     "loss": 1.7438753843307495,
+     "acc": 0.21875
+    },
+    {
+     "step": 5000,
+     "loss": 0.0036241100169718266,
+     "acc": 0.984375
+    },
+    {
+     "step": 7500,
+     "loss": 1.5343763152486645e-05,
+     "acc": 1.0
+    },
+    {
+     "step": 10000,
+     "loss": 2.808320459735114e-05,
+     "acc": 0.984375
+    },
+    {
+     "step": 12500,
+     "loss": 6.865538580314023e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 15000,
+     "loss": 8.879169035935774e-05,
+     "acc": 1.0
+    },
+    {
+     "step": 17500,
+     "loss": 2.0861614302702947e-07,
+     "acc": 1.0
+    },
+    {
+     "step": 20000,
+     "loss": 1.7024398175635724e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 22500,
+     "loss": 8.612973761046305e-05,
+     "acc": 1.0
+    },
+    {
+     "step": 25000,
+     "loss": 1.6763799237651256e-07,
+     "acc": 1.0
+    },
+    {
+     "step": 27500,
+     "loss": 6.258053417695919e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 30000,
+     "loss": 2.719456233535311e-07,
+     "acc": 1.0
+    }
+   ],
+   "test": {
+    "512": {
+     "normal": 1.0,
+     "keys": 0.189453125,
+     "values": 0.017578125,
+     "true_recall": 0.810546875
+    },
+    "2048": {
+     "normal": 1.0,
+     "keys": 0.1484375,
+     "values": 0.017578125,
+     "true_recall": 0.8515625
+    },
+    "8192": {
+     "normal": 1.0,
+     "keys": 0.130859375,
+     "values": 0.013671875,
+     "true_recall": 0.869140625
+    }
+   },
+   "value_set_baseline": 0.25,
+   "chance": 0.015625,
+   "micro_batch": null
+  },
+  "16": {
+   "queries": 4,
+   "distinct": true,
+   "steps": 30000,
+   "capped": false,
+   "diverged": false,
+   "bf16": true,
+   "final_loss": 1.3969836842875338e-08,
+   "minutes": 63.5,
+   "history": [
+    {
+     "step": 2500,
+     "loss": 3.0024068355560303,
+     "acc": 0.04296875
+    },
+    {
+     "step": 5000,
+     "loss": 2.7924177646636963,
+     "acc": 0.05078125
+    },
+    {
+     "step": 7500,
+     "loss": 2.770082712173462,
+     "acc": 0.05859375
+    },
+    {
+     "step": 10000,
+     "loss": 9.756130020832643e-05,
+     "acc": 1.0
+    },
+    {
+     "step": 12500,
+     "loss": 1.6270125797746005e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 15000,
+     "loss": 2.722212002481683e-06,
+     "acc": 1.0
+    },
+    {
+     "step": 17500,
+     "loss": 3.274220216553658e-05,
+     "acc": 1.0
+    },
+    {
+     "step": 20000,
+     "loss": 5.196762913328712e-07,
+     "acc": 1.0
+    },
+    {
+     "step": 22500,
+     "loss": 1.1362127594338745e-07,
+     "acc": 1.0
+    },
+    {
+     "step": 25000,
+     "loss": 2.6077021431092362e-08,
+     "acc": 1.0
+    },
+    {
+     "step": 27500,
+     "loss": 3.8184179373956795e-08,
+     "acc": 1.0
+    },
+    {
+     "step": 30000,
+     "loss": 1.3969836842875338e-08,
+     "acc": 1.0
+    }
+   ],
+   "test": {
+    "512": {
+     "normal": 1.0,
+     "keys": 0.01904296875,
+     "values": 0.0166015625,
+     "true_recall": 0.98095703125
+    },
+    "2048": {
+     "normal": 1.0,
+     "keys": 0.01904296875,
+     "values": 0.0146484375,
+     "true_recall": 0.98095703125
+    },
+    "8192": {
+     "normal": 1.0,
+     "keys": 0.01904296875,
+     "values": 0.01904296875,
+     "true_recall": 0.98095703125
+    }
+   },
+   "value_set_baseline": 0.0625,
+   "chance": 0.015625,
+   "micro_batch": null
+  }
+ },
+ "seconds": 7535.7
+}
