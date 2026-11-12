@@ -1,0 +1,50 @@
+{
+ "model": "hyb_lstm_nope",
+ "repo": "(new) hybrid: LSTM layer + x-transformers decoder",
+ "target_repo": "LM_Dec_Long_HybridLSTM_NoPE",
+ "category": "Long",
+ "upstream": "lucidrains/x-transformers (MIT), pip 2.31.7 + torch.nn",
+ "unified": [
+  "ablation of hyb_gru_nope: LSTM instead of GRU in front of the NoPE decoder"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "lm08",
+ "started": "2026-11-09 18:59:56",
+ "smoke": false,
+ "steps": 6000,
+ "capped": false,
+ "bf16": true,
+ "final_bits": 3.2897254215400107,
+ "test": {
+  "512": {
+   "bits_full": 3.258609761402296
+  },
+  "2048": {
+   "bits_full": 3.2396868112975,
+   "bits_last512": 3.23702619669299,
+   "gain_from_history": -0.0026606146045100587
+  },
+  "8192": {
+   "bits_full": 3.2621511851532,
+   "bits_last512": 3.2567656774284197,
+   "gain_from_history": -0.005385507724780414
+  }
+ },
+ "config": {
+  "train_len": 512,
+  "test_lens": [
+   512,
+   2048,
+   8192
+  ],
+  "batch": 16,
+  "steps": 6000,
+  "eval_every": 1000,
+  "eval_samples": 64,
+  "tail": 256,
+  "max_hours": 1.5
+ },
+ "minutes": 7.1,
+ "seconds": 427.4
+}
